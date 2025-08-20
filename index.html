@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Meine Webseite</title>
@@ -7,5 +7,109 @@
 <body>
   <h1>Hallo Welt 🌍</h1>
   <p>Willkommen auf meiner ersten GitHub-Webseite!</p>
+</body>
+</html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    input {
+      margin: 0.5rem;
+      padding: 0.3rem;
+    }
+    button {
+      padding: 0.4rem 1rem;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <p>Enter two numbers:</p>
+  
+  <input type="number" id="num1" placeholder="First number">
+  <input type="number" id="num2" placeholder="Second number">
+  <button onclick="calculate()">Add</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      // get values from inputs
+      let n1 = parseFloat(document.getElementById('num1').value);
+      let n2 = parseFloat(document.getElementById('num2').value);
+
+      // check input
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById('result').textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      // do the calculation
+      let sum = n1 + n2;
+
+      // show the result
+      document.getElementById('result').textContent = "Result: " + sum;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin Units Demo</title>
+  <style>
+    body {
+      font-size: 16px; /* root font size (1rem = 16px by default) */
+    }
+
+    .container {
+      border: 2px dashed #aaa;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .px-box {
+      margin: 20px;
+      background: lightcoral;
+      padding: 1rem;
+    }
+
+    .em-box {
+      font-size: 20px; /* larger font size affects em */
+      margin: 1em;
+      background: lightseagreen;
+      padding: 1rem;
+    }
+
+    .rem-box {
+      margin: 1rem;
+      background: lightskyblue;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="px-box">Margin: 20px</div>
+    <div class="em-box">Margin: 1em (depends on element font size → 20px here)</div>
+    <div class="rem-box">Margin: 1rem (depends on root font size → 16px here)</div>
+  </div>
 </body>
 </html>
